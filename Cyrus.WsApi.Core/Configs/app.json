@@ -1,0 +1,55 @@
+{
+  "FtpSection": [
+    {
+      "Provider": "HebeiESB",
+      "Host": "120.25.238.73",
+      "Port": 21,
+      "UserName": "ftpuser",
+      "Password": "pass@word1",
+      "LocalDirectory": "e:/ftp/home/tuomingftp/data/ws",
+      "BaseDirectory": "/sharedata",
+      "RemotePath": null,
+      "RenameFormat": null,
+      "CategoryMaps": [
+        {
+          "MatchName": "NRM_EUTRANCELL",
+          "SubDirectory": "NRM_EUTRANCELLTDD",
+          "IsPatterm": false,
+          "IgnoreCase": true
+        },
+        {
+          "MatchName": "NRM_ENBFUNCTION",
+          "SubDirectory": "NRM_ENBFUNCTION"
+        },
+        {
+          "MatchName": "MRS_MR_AOA",
+          "SubDirectory": "MRS_AOA"
+        },
+        {
+          "MatchName": "MRS_MR_PowerHeadRoom",
+          "SubDirectory": "MRS_PowerHeadRoom"
+        },
+        {
+          "MatchName": "MRS_MR_ReceivedIPower",
+          "SubDirectory": "MRS_ReceivedIPower"
+        },
+        {
+          "MatchName": "MRS_RSRP",
+          "SubDirectory": "MRS_RSRP"
+        },
+        {
+          "MatchName": "MRS_SinrUL",
+          "SubDirectory": "MRS_SinrUL"
+        },
+        {
+          "MatchName": "MRS_Tadv_",
+          "SubDirectory": "MRS_Tadv"
+        },
+        {
+          "MatchName": "MRS_MR_RSRQ",
+          "SubDirectory": "MRS_TadvRsrp"
+        }
+      ]
+    }
+  ]
+}
