@@ -1,6 +1,7 @@
 ﻿using Cyrus.ZConsole.Core.Contexts;
 using Cyrus.ZConsole.Core.Entities;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,33 +10,42 @@ namespace Cyrus.ZConsole.Core
 {
     class Program
     {
+        private static IDictionary<string, AntennasPattern> _antMap = new Dictionary<string, AntennasPattern>();
         static async Task Main(string[] args)
         {
             var directory = "F:\\下载\\antennas_pattern_190328";
 
-            var fileNames = Directory.GetFiles(directory, "*.txt", SearchOption.TopDirectoryOnly);
+            var fileNames = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly);
+
+            _antMap.Clear();
 
             using (var ctx = new SosasContext())
             {
                 for (int i = 0; i < fileNames.Length; i++)
                 {
+                    AntennasPattern entity = null;
                     var name = Path.GetFileNameWithoutExtension(fileNames[i]).Trim().Replace(" ", "_");
+                    Console.WriteLine($"正在处理：{fileNames[i]}");
+                    if (_antMap.ContainsKey(name)) entity = _antMap[name];
                     var lines = await File.ReadAllLinesAsync(fileNames[i]);
-                    var antennasPattern = await MapToEntityAsync(lines);
-                    antennasPattern.DefName = name;
-                    antennasPattern.CommentDate = antennasPattern.LogDate.ToString("yyyy-MM-dd");
-                    await ctx.AntennasPatterns.AddAsync(antennasPattern);
+                    entity = await MapToEntityAsync(lines, entity);
+                    entity.DefName = name;
+                    entity.CommentDate = entity.LogDate.ToString("yyyy-MM-dd");
+                    if (!_antMap.ContainsKey(name)) _antMap.Add(name, entity);
+                    //await ctx.AntennasPatterns.AddOrUpdateAsync(antennasPattern);
                 }
+                Console.WriteLine($"正在保存：{_antMap.Count()}");
+                await ctx.AntennasPatterns.AddRangeAsync(_antMap.Values);
                 var rows = ctx.SaveChanges();
                 //var rows = await ctx.SaveChangesAsync();
                 Console.WriteLine($"影响行数：{rows}");
             }
         }
 
-        private static async Task<AntennasPattern> MapToEntityAsync(string[] lines)
+        private static async Task<AntennasPattern> MapToEntityAsync(string[] lines, AntennasPattern entity)
         {
             lines = lines.Select(o => o.Trim()).ToArray();
-            var entity = new AntennasPattern();
+            entity = entity ?? new AntennasPattern();
             var propInfos = lines.Where(o => !string.IsNullOrWhiteSpace(o) && o.First() >= 65);
             foreach (var line in propInfos)
             {
