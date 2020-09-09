@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace Cyrus.Extensions.DateTimeExtensions
 {
     [DebuggerDisplay("DayOfWeek={DayOfWeek},StartTime={StartTime},EndTime={EndTime}")]
     public class BusinessDay
     {
-        public BusinessDay(DayOfWeek dayOfWeek) : this(dayOfWeek, TimeSpan.FromHours(9), TimeSpan.FromHours(17)) { }
+        public BusinessDay(DayOfWeek dayOfWeek) : this(dayOfWeek, TimeSpan.FromHours(9), TimeSpan.FromHours(17))
+        {
+        }
+
         public BusinessDay(DayOfWeek dayOfWeek, TimeSpan startTime, TimeSpan endTime)
         {
             if (startTime.TotalDays >= 1)
@@ -21,6 +22,7 @@ namespace Cyrus.Extensions.DateTimeExtensions
             EndTime = endTime;
             DayOfWeek = dayOfWeek;
         }
+
         public DayOfWeek DayOfWeek { get; private set; }
         public TimeSpan EndTime { get; private set; }
         public TimeSpan StartTime { get; private set; }

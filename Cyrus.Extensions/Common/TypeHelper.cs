@@ -11,7 +11,8 @@ namespace Cyrus.Extensions.Common
     {
         internal static IList<Type> SortByPriority(this IEnumerable<Type> types)
         {
-            return types.OrderBy(t => {
+            return types.OrderBy(t =>
+            {
                 var priorityAttribute = t.GetTypeInfo().GetCustomAttributes(typeof(PriorityAttribute), true).FirstOrDefault() as PriorityAttribute;
                 return priorityAttribute != null ? priorityAttribute.Priority : 0;
             }).ToList();

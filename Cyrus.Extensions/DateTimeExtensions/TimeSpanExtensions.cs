@@ -6,6 +6,7 @@ namespace Cyrus.Extensions.DateTimeExtensions
     public struct AgeSpan
     {
         private TimeSpan _span;
+
         public AgeSpan(TimeSpan span) : this()
         {
             _span = span;
@@ -256,6 +257,7 @@ namespace Cyrus.Extensions.DateTimeExtensions
         {
             return span.Ticks * 100d;
         }
+
         /// <summary>
         /// 返回当前实例的总周数
         /// </summary>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Cyrus.Extensions
+﻿namespace Cyrus.Extensions
 {
     public class Class1
     {

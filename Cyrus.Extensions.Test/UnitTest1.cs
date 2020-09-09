@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Cyrus.Extensions.DateTimeExtensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Cyrus.Extensions.Test
 {
@@ -82,7 +82,6 @@ namespace Cyrus.Extensions.Test
             var em = now.EndOfMonth();
 
             var en = (TEnum)Enum.Parse(typeof(TEnum), "9");
-
         }
     }
 

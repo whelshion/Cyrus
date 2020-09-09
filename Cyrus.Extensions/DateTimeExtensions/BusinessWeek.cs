@@ -12,16 +12,19 @@ namespace Cyrus.Extensions.DateTimeExtensions
         {
             BusinessDays = new List<BusinessDay>();
         }
+
         public BusinessWeek(string instanceName) : this()
         {
             if (instanceName != null)
                 InstanceName = instanceName;
         }
+
         public BusinessWeek(string instanceName, IList<BusinessDay> businessDays) : this(instanceName)
         {
             if (businessDays != null)
                 BusinessDays = businessDays;
         }
+
         public BusinessWeek(string instanceName, TimeSpan startTime, TimeSpan endTime, params DayOfWeek[] dayOfWeeks) : this(instanceName)
         {
             if (dayOfWeeks != null)
@@ -251,7 +254,6 @@ namespace Cyrus.Extensions.DateTimeExtensions
             }
             return _dayTree;
         }
-
 
         private class Nested
         {
