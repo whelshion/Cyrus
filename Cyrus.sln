@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cyrus.WsApi.Core", "Cyrus.W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "z-consoles", "z-consoles", "{68A48F7B-F85F-480B-83F9-2328EB03ED89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyrus.ZConsole.Core", "Cyrus.ZConsole.Core\Cyrus.ZConsole.Core.csproj", "{CF7FEA54-D28D-45A2-8580-A426F79E84B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cyrus.ZConsole.Core", "Cyrus.ZConsole.Core\Cyrus.ZConsole.Core.csproj", "{CF7FEA54-D28D-45A2-8580-A426F79E84B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cyrus.ApiClient", "Cyrus.RestClient\Cyrus.ApiClient.csproj", "{571EE93F-89BD-4EE8-8753-B2740860EDC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cyrus.ApiClient", "Cyrus.ApiClient\Cyrus.ApiClient.csproj", "{DD3C78E7-D319-407F-97F1-C4269D071AA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{CF7FEA54-D28D-45A2-8580-A426F79E84B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7FEA54-D28D-45A2-8580-A426F79E84B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7FEA54-D28D-45A2-8580-A426F79E84B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{571EE93F-89BD-4EE8-8753-B2740860EDC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{571EE93F-89BD-4EE8-8753-B2740860EDC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{571EE93F-89BD-4EE8-8753-B2740860EDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{571EE93F-89BD-4EE8-8753-B2740860EDC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3C78E7-D319-407F-97F1-C4269D071AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3C78E7-D319-407F-97F1-C4269D071AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3C78E7-D319-407F-97F1-C4269D071AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3C78E7-D319-407F-97F1-C4269D071AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +61,7 @@ Global
 		{124EFF34-C1B0-4930-84C4-4E72FC72D0DE} = {A298AC28-2E19-40ED-94D4-28CE879BAACA}
 		{E48B4C6B-33BF-492F-ACFC-BCABE733998E} = {A298AC28-2E19-40ED-94D4-28CE879BAACA}
 		{CF7FEA54-D28D-45A2-8580-A426F79E84B8} = {68A48F7B-F85F-480B-83F9-2328EB03ED89}
+		{DD3C78E7-D319-407F-97F1-C4269D071AA9} = {68A48F7B-F85F-480B-83F9-2328EB03ED89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05DC6A24-1CA9-4D5E-B4FA-0DB4C37AA9E5}
